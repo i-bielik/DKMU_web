@@ -1,0 +1,103 @@
+@import 'normalize'
+@import 'mixins'
+@import 'vars'
+@import 'typography'
+@import 'flex'
+
+body
+  max-width: 800px
+  min-height: 100vh
+  position: relative
+  margin: 0 auto
+
+ul.topnav
+  list-style-type: none
+  margin: 0
+  padding: 0
+  overflow: hidden
+  position: relative
+  top: 0
+  background-color: $DKMU-red
+  font-size: 18px
+  border-bottom: none
+  @include clearFix
+ul.topnav li
+  float: left
+  a
+    display: inline-block
+    color: white
+    text-align: center
+    padding: 14px
+    text-decoration: none
+    transition: 0.3s
+    &:hover
+      background-color: $DKMU-green
+      color: white
+ul.topnav li.icon
+  display: none
+
+@media screen and (max-width:600px)
+  ul.topnav li:not(:first-child)
+    display: none
+  ul.topnav li.icon
+    float: right
+    display: inline-block
+  ul.topnav.responsive
+    position: relative
+    li.icon
+      position: absolute
+      right: 0
+      top: 0
+    li
+      float: none
+      display: inline
+      a
+        display: block
+        text-align: left
+
+li
+  line-height: 1.5
+
+a
+  font-weight: bold
+  color: $DKMU-red
+  &:hover
+    color: white
+    background-color: $DKMU-green
+
+.big
+   font-size: 130%
+
+section
+  margin-bottom: 30px
+  @include clearFix()
+  @media screen and (max-width: 768px)
+    padding: 0 10px
+
+.btn
+  float: left
+  padding: 14px 16px
+  border-radius: 6px
+  text-align: center
+  font-weight: bold
+  text-decoration: none
+  color: #fff
+  background-color: $DKMU-red
+  &:hover
+    background-color: $DKMU-green
+    color: white
+
+footer
+  position: relative
+  bottom: 0
+  margin-top: 60px
+  @media screen and (max-width: 768px)
+    padding: 0 10px
+
+.normalize
+  width: 75%
+  border-radius: 6px
+  display: block
+  height: auto
+  @media screen and (max-width:600px)
+    width: 100%
